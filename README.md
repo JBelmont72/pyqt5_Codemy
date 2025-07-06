@@ -1,6 +1,6 @@
 
 
-## 🏁used UV
+## 🏁used UV 
 * uv pip list | grep PyQt5
 
 python -c "import PyQt5.QtWidgets; import PyQt5.QtGui; print('PyQt5 imports successful')"
