@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LCD_Window</class>
+ <widget class="QMainWindow" name="LCD_Window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>100000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>LCD Time</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>-20</y>
+      <width>551</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+     <item>
+      <widget class="QLCDNumber" name="lcdNumber">
+       <property name="styleSheet">
+        <string notr="true">QLCDNumber{background-color: yellow;color:blue}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="maximumSize">
+          <size>
+           <width>16777214</width>
+           <height>15000</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>22</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>selected time</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel{background-color:lightblue; color:darkgreen}</string>
+         </property>
+         <property name="text">
+          <string>time:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTimeEdit" name="timeEdit">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>100000</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>22</pointsize>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTimeEdit{background-color:lightblue; color:darkgreen}</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuTime">
+    <property name="title">
+     <string>Time</string>
+    </property>
+    <addaction name="actionTime"/>
+    <addaction name="actionTime_Edit"/>
+   </widget>
+   <widget class="QMenu" name="menuCalendar">
+    <property name="title">
+     <string>Calendar</string>
+    </property>
+    <addaction name="actionOpen_Calendar"/>
+   </widget>
+   <widget class="QMenu" name="menuThird_Window">
+    <property name="title">
+     <string>Third Window</string>
+    </property>
+    <addaction name="actionOpen_3d_Window"/>
+    <addaction name="actionOpen_Dialog"/>
+   </widget>
+   <addaction name="menuTime"/>
+   <addaction name="menuCalendar"/>
+   <addaction name="menuThird_Window"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionTime">
+   <property name="text">
+    <string>Time</string>
+   </property>
+  </action>
+  <action name="actionTime_Edit">
+   <property name="text">
+    <string>Time Edit</string>
+   </property>
+  </action>
+  <action name="actionOpen_Calendar">
+   <property name="text">
+    <string>Open Calendar</string>
+   </property>
+  </action>
+  <action name="actionOpen_3d_Window">
+   <property name="text">
+    <string>Open 3d Window</string>
+   </property>
+  </action>
+  <action name="actionOpen_Dialog">
+   <property name="text">
+    <string>Open Dialog</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

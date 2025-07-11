@@ -1,5 +1,20 @@
 
 
+# CODEMY
+
+## Episodes 33-35
+*Codemy 33,34,35 Use Menubar,QCalendarWidget,QLCDNumber, Open multiple windows using uic
+In the mainWIndow has calendar and secondWindow LCD Number
+/Users/judsonbelmont/Documents/Shared_Folders/pyqt5_Codemy/Cod_34_Calendar_Lcd_Menu/calendar.py
+
+
+
+## Episode 36 Open Multiple Windows  with QMdiArea
+* /Users/judsonbelmont/Documents/Shared_Folders/pyqt5_Codemy/Cod_36_MdiArea
+
+
+# UV
+
 ## 🏁used UV 
 * uv pip list | grep PyQt5
 
@@ -88,7 +103,7 @@ Below is my .gitignore I use in my ‘practiceOPENCV’ folder which I will add 
 *.DS_Store
 **.DS_Store
 
-# Byte-compiled / optimized / DLL files
+## Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -121,10 +136,10 @@ __pycache__/
 *$py.class
 .pytest_cache
 
-# C extensions
+## C extensions
 *.so
 
-# Distribution / packaging
+## Distribution / packaging
 .Python
 env/
 build/
@@ -143,17 +158,17 @@ wheels/
 .installed.cfg
 *.egg
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+## PyInstaller
+##  Usually these files are written by a python script from a template
+##  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
-# Installer logs
+## Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+## Unit test / coverage reports
 htmlcov/
 .tox/
 .coverage
@@ -164,15 +179,15 @@ coverage.xml
 *,cover
 .hypothesis/
 
-# Translations
+## Translations
 *.mo
 *.pot
 
-# Django stuff:
+## Django stuff:
 *.log
 local_settings.py
 
-# Flask stuff:
+## Flask stuff:
 instance/
 .webassets-cache
 
@@ -211,7 +226,7 @@ ENV/
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
-# User-specific stuff:
+## User-specific stuff:
 .idea/guizero.iml
 .idea/misc.xml
 .idea/modules.xml
@@ -255,14 +270,14 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-# Editor detritus
+## Editor detritus
 *.vim
 *.swp
 tags
 .vscode
 .idea
 
-# MKDocs build
+## MKDocs build
 site/
 
 *.pyc

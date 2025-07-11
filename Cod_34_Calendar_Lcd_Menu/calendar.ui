@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QCalendarWidget" name="calendarWidget">
+    <property name="geometry">
+     <rect>
+      <x>43</x>
+      <y>-8</y>
+      <width>551</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCalendarWidget{background-color:lightblue}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>270</y>
+      <width>281</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{background-color: yellow;color:blue}</string>
+    </property>
+    <property name="text">
+     <string>date:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>270</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{background-color:yellow; color: blue}</string>
+    </property>
+    <property name="text">
+     <string>Select</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>340</y>
+      <width>281</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{background-color: yellow;color:blue}</string>
+    </property>
+    <property name="text">
+     <string>Time:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>37</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuCalendar">
+    <property name="title">
+     <string>Calendar</string>
+    </property>
+    <addaction name="actionOpen_Calendar"/>
+    <addaction name="actionOption_1"/>
+    <addaction name="actionOption_2"/>
+   </widget>
+   <widget class="QMenu" name="menuLCD_Clock">
+    <property name="title">
+     <string>LCD  Clock</string>
+    </property>
+    <addaction name="actionOpen_Clock"/>
+    <addaction name="actionClock_Option_1"/>
+   </widget>
+   <widget class="QMenu" name="menuOpen_Next">
+    <property name="title">
+     <string>Open Next</string>
+    </property>
+    <addaction name="actionOpen_Third_Window"/>
+   </widget>
+   <addaction name="menuCalendar"/>
+   <addaction name="menuLCD_Clock"/>
+   <addaction name="menuOpen_Next"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen_Calendar">
+   <property name="text">
+    <string>Open Calendar</string>
+   </property>
+  </action>
+  <action name="actionOpen_Clock">
+   <property name="text">
+    <string>Open Clock</string>
+   </property>
+  </action>
+  <action name="actionOption_1">
+   <property name="text">
+    <string>Option 1</string>
+   </property>
+  </action>
+  <action name="actionOption_2">
+   <property name="text">
+    <string>Option 2</string>
+   </property>
+  </action>
+  <action name="actionClock_Option_1">
+   <property name="text">
+    <string>Clock Option 1</string>
+   </property>
+  </action>
+  <action name="actionOpen_Third_Window">
+   <property name="text">
+    <string>Open Third Window</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
