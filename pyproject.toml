@@ -6,6 +6,9 @@ readme = "README.md"
 requires-python = ">=3.9.6"
 dependencies = [
     "googletrans==4.0.0rc1",
+    "gtts>=2.5.4",
+    "playsound==1.2.2",
+    "pyobjc>=11.1",
     "pyqt5>=5.15.11",
-    "textblob>=0.19.0",
+    "pyttsx3>=2.99",
 ]
