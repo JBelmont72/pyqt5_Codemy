@@ -8,3 +8,92 @@ wheels/
 
 # Virtual environments
 .venv
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Logs, temp files, and caches
+*.log
+*.swp
+*.vim
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.pytest_cache
+*.cover
+*.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+*.venv
+**/.venv
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test / build artifacts
+build/
+build2/
+dist/
+downloads/
+*.egg-info/
+.eggs/
+wheels/
+develop-eggs/
+sdist/
+target/
+
+# Python specific tools
+.Python
+.python-version
+celerybeat-schedule
+instance/
+.webassets-cache
+.scrapy
+.micropico
+
+# IDE/editor settings
+.vscode/
+.idea/
+**/.vscode/
+**/.idea/
+
+# JetBrains-specific files
+*.iml
+*.iws
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# LFS/media/data files
+*.mov
+*.mp4
+*.avi
+*.mpeg
+*.csv
+*.so
+*.o
+
+# Docs / Sphinx / MkDocs
+docs/_build/
+site/
+docs/docs/
+
+# Misc
+tags
+*~
+*.spec
+*.manifest
+
+# Jupyter Notebook
+.ipynb_checkpoints/

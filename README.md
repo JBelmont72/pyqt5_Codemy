@@ -80,7 +80,7 @@ uv venv --python 3.13.0     this sets the virtual envirinment version to whateve
 Corey Schafer
 ArjanCodes. 'UV for Python ...(Almost) all batteries included)
 
-## .gitignore 
+# .gitignore 
 * Ignore everything in any directory named temp
 Example
 # ignore ALL .log files

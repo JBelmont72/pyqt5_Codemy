@@ -10,6 +10,7 @@ need a Translator_speech.ui and add two buttons
 
 added pip install pyobjc
 
+
 '''
 
 # from PyQt5.QtCore import QTimer
@@ -357,7 +358,7 @@ added pip install pyobjc
 #     window.show()
 #     sys.exit(app.exec_())
 
-
+## !!this is the final working copy /Users/judsonbelmont/Documents/Shared_Folders/pyqt5_Codemy/Cod_38_Translator
 import sys
 import platform
 from PyQt5.QtWidgets import (
@@ -407,7 +408,9 @@ class MainWindow(QMainWindow):
         self.language_to_voice = {
     "spanish": "com.apple.ttsbundle.Monica-compact",
     "german": "com.apple.ttsbundle.Anna-compact",
-    "french": "com.apple.ttsbundle.Thomas-compact"
+    "french": "com.apple.ttsbundle.Thomas-compact",
+    "hebrew": "com.apple.speech.synthesis.voice.Carmit",
+    "latin": "com.apple.speech.synthesis.voice.Luca",  # Fallback to Italian
 }
 
         # UI Elements
