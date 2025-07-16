@@ -405,13 +405,21 @@ class MainWindow(QMainWindow):
         else:
             self.engine = pyttsx3.init()
             self.speech_threads = []
+       
         self.language_to_voice = {
-    "spanish": "com.apple.ttsbundle.Monica-compact",
-    "german": "com.apple.ttsbundle.Anna-compact",
-    "french": "com.apple.ttsbundle.Thomas-compact",
+    "spanish": "com.apple.voice.compact.es-ES.Monica",
+    "german": "com.apple.voice.compact.de-DE.Anna",
+    # "french": "com.apple.voice.compact.fr-FR.Thomas",
+    "french": "com.apple.eloquence.fr-FR.Grandma",
     "hebrew": "com.apple.speech.synthesis.voice.Carmit",
-    "latin": "com.apple.speech.synthesis.voice.Luca",  # Fallback to Italian
+    "latin": "com.apple.voice.compact.it-IT.Luca",  # fallback to Italian
+    "polish": "com.apple.voice.compact.pl-PL.Zosia",
+    # 'english':'com.apple.eloquence.en-US.Rocko',
+    'english':'com.apple.voice.compact.en-AU.Karen',
 }
+
+    
+
 
         # UI Elements
         self.textEdit_1 = self.findChild(QTextEdit, 'textEdit_1')

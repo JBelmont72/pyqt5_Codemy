@@ -9,58 +9,58 @@ Lets you test a voice by typing text.
 Helps you build a dictionary of preferred voices (e.g. for your language_to_voice mapping).
 
 '''
-# from AppKit import NSSpeechSynthesizer
-# from collections import defaultdict
+from AppKit import NSSpeechSynthesizer
+from collections import defaultdict
 
-# # Get available voices and their attributes
-# voices = NSSpeechSynthesizer.availableVoices()
-# print('type for voices: ',type(voices))
-# lang_voice_map = defaultdict(list)
+# Get available voices and their attributes
+voices = NSSpeechSynthesizer.availableVoices()
+print('type for voices: ',type(voices))
+lang_voice_map = defaultdict(list)
 
-# print("🔍 Gathering available voices...\n")
+print("🔍 Gathering available voices...\n")
 
-# for voice in voices:
-#     print('voice is : ',voice)
-#     attrs = NSSpeechSynthesizer.attributesForVoice_(voice)
-#     lang = attrs.get("VoiceLocaleIdentifier", "Unknown")
-#     name = attrs.get("VoiceName", "Unnamed")
-#     lang_voice_map[lang].append((name, voice))
-#     print('my attrs:: ',attrs)
+for voice in voices:
+    print('voice is : ',voice)
+    attrs = NSSpeechSynthesizer.attributesForVoice_(voice)
+    lang = attrs.get("VoiceLocaleIdentifier", "Unknown")
+    name = attrs.get("VoiceName", "Unnamed")
+    lang_voice_map[lang].append((name, voice))
+    print('my attrs:: ',attrs)
     
-# # Print grouped voices
-# for lang, voice_list in sorted(lang_voice_map.items()):
-#     print(f"\n🌐 Language: {lang}")
-#     for i, (name, voice_id) in enumerate(voice_list):
-#         print(f"  [{i}] {name:<20} - {voice_id}")
+# Print grouped voices
+for lang, voice_list in sorted(lang_voice_map.items()):
+    print(f"\n🌐 Language: {lang}")
+    for i, (name, voice_id) in enumerate(voice_list):
+        print(f"  [{i}] {name:<20} - {voice_id}")
 
-# # Prompt to test a voice
-# while True:
-#     lang_input = input("\nEnter language code to test a voice (e.g. 'es_ES', 'he_IL', 'fr_FR', or 'q' to quit): ").strip()
-#     if lang_input.lower() == 'q':
-#         break
-#     if lang_input not in lang_voice_map:
-#         print("❌ Language not found. Try again.")
-#         continue
+# Prompt to test a voice
+while True:
+    lang_input = input("\nEnter language code to test a voice (e.g. 'es_ES', 'he_IL', 'fr_FR', or 'q' to quit): ").strip()
+    if lang_input.lower() == 'q':
+        break
+    if lang_input not in lang_voice_map:
+        print("❌ Language not found. Try again.")
+        continue
 
-#     voice_options = lang_voice_map[lang_input]
-#     for i, (name, _) in enumerate(voice_options):
-#         print(f"[{i}] {name}")
+    voice_options = lang_voice_map[lang_input]
+    for i, (name, _) in enumerate(voice_options):
+        print(f"[{i}] {name}")
 
-#     index_input = input("Select voice index to test: ").strip()
-#     if not index_input.isdigit() or int(index_input) >= len(voice_options):
-#         print("❌ Invalid index. Try again.")
-#         continue
+    index_input = input("Select voice index to test: ").strip()
+    if not index_input.isdigit() or int(index_input) >= len(voice_options):
+        print("❌ Invalid index. Try again.")
+        continue
 
-#     _, voice_id = voice_options[int(index_input)]
+    _, voice_id = voice_options[int(index_input)]
 
-#     test_text = input("Type a sentence to speak: ").strip()
-#     if test_text:
-#         speaker = NSSpeechSynthesizer.alloc().init()
-#         speaker.setVoice_(voice_id)
-#         speaker.startSpeakingString_(test_text)
-#         print(f"✅ Speaking with {voice_id}...\n")
+    test_text = input("Type a sentence to speak: ").strip()
+    if test_text:
+        speaker = NSSpeechSynthesizer.alloc().init()
+        speaker.setVoice_(voice_id)
+        speaker.startSpeakingString_(test_text)
+        print(f"✅ Speaking with {voice_id}...\n")
 
-# print("👋 Done.")
+print("👋 Done.")
 
 
 # ✅ 1. List All Available Voices (and their locales)
@@ -352,126 +352,126 @@ Helps you build a dictionary of preferred voices (e.g. for your language_to_voic
 #         print(f"  [{i}] {name:<20} - {voice_id}")
 
 #####
-import platform
-from AppKit import NSSpeechSynthesizer
+# import platform
+# from AppKit import NSSpeechSynthesizer
 
-# Get list of available voice identifiers
-voices = NSSpeechSynthesizer.availableVoices()
-print(type(voices)) # output: <objective-c class __NSArrayI at 0x2071acff0>
-print(voices[:3]) ## output: a list  of three voices( "com.apple.speech.synthesis.voice.Albert", "com.apple.voice.compact.it-IT.Alice",....)
-print(type(voices[0]))  #<class 'objc.pyobjc_unicode'>
-print(voices[0])        #com.apple.speech.synthesis.voice.Albert
-
-
-print(f"\n➡️ Level 0: voices (type: {type(voices)})")
-print(f"Total voices: {len(voices)}")
-print(f"voices[0]: {voices[0]}")  # This is a string
-
-# Drill into the first voice
-voice_id = voices[0]
-print(f"\n➡️ Level 1: voice_id = voices[0]")
-print(f"voice_id: {voice_id} (type: {type(voice_id)})")
-
-# Get the attributes dictionary for that voice
-# attrs = NSSpeechSynthesizer.attributesForVoice_(voice_id)
-attrs = NSSpeechSynthesizer.attributesForVoice_(voices[0])
-# print(f"\n➡️ Level 2: attributes = NSSpeechSynthesizer.attributesForVoice_({voice_id})")
-print(f"\n➡️ Level 2: attributes = NSSpeechSynthesizer.attributesForVoice_({voices[0]})")
-print(f"type: {type(attrs)}")   #output:  type: <objective-c class __NSDictionaryM at 0x2071ad400>
-
-# Drill into the top-level keys in the attribute dictionary
-print("\n➡️ Level 3: keys and values in attributes (one by one)")
-for key, value in attrs.items():
-    print(f"Key: {key} | Type: {type(value)}")
-    if isinstance(value, (str, int)):
-        print(f'Key: {key}')
-        print(f"  Value: {value}")
-    elif isinstance(value, list):
-        print(f"  Value is a list of {len(value)} items")
-        print("  -> Showing first item:")
-
-        # Drill into first item of the list
-        first_item = value[0]
-        print(f"    First item type: {type(first_item)}")
-
-        # If it's a dictionary inside the list, print its keys
-        if isinstance(first_item, dict):
-            for k, v in first_item.items():
-                print(f"      {k} : {v}")
-        else:
-            print(f"    Value: {first_item}")
-
-    elif isinstance(value, dict):
-        print("  Nested dictionary:")
-        for k, v in value.items():
-            print(f"    {k} : {v}")
-    else:
-        print(f"  Unhandled type: {type(value)}")
-
-# Optional: print the demo text for clarity
-print(f"\n➡️ Sample demo text:\n{attrs.get('VoiceDemoText')} and Judson just worked his way down to me!")
-
-## make into a class where I can enter the voice indeex
-import platform
-from AppKit import NSSpeechSynthesizer
+# # Get list of available voice identifiers
+# voices = NSSpeechSynthesizer.availableVoices()
+# print(type(voices)) # output: <objective-c class __NSArrayI at 0x2071acff0>
+# print(voices[:3]) ## output: a list  of three voices( "com.apple.speech.synthesis.voice.Albert", "com.apple.voice.compact.it-IT.Alice",....)
+# print(type(voices[0]))  #<class 'objc.pyobjc_unicode'>
+# print(voices[0])        #com.apple.speech.synthesis.voice.Albert
 
 
+# print(f"\n➡️ Level 0: voices (type: {type(voices)})")
+# print(f"Total voices: {len(voices)}")
+# print(f"voices[0]: {voices[0]}")  # This is a string
+
+# # Drill into the first voice
+# voice_id = voices[0]
+# print(f"\n➡️ Level 1: voice_id = voices[0]")
+# print(f"voice_id: {voice_id} (type: {type(voice_id)})")
+
+# # Get the attributes dictionary for that voice
+# # attrs = NSSpeechSynthesizer.attributesForVoice_(voice_id)
+# attrs = NSSpeechSynthesizer.attributesForVoice_(voices[0])
+# # print(f"\n➡️ Level 2: attributes = NSSpeechSynthesizer.attributesForVoice_({voice_id})")
+# print(f"\n➡️ Level 2: attributes = NSSpeechSynthesizer.attributesForVoice_({voices[0]})")
+# print(f"type: {type(attrs)}")   #output:  type: <objective-c class __NSDictionaryM at 0x2071ad400>
+
+# # Drill into the top-level keys in the attribute dictionary
+# print("\n➡️ Level 3: keys and values in attributes (one by one)")
+# for key, value in attrs.items():
+#     print(f"Key: {key} | Type: {type(value)}")
+#     if isinstance(value, (str, int)):
+#         print(f'Key: {key}')
+#         print(f"  Value: {value}")
+#     elif isinstance(value, list):
+#         print(f"  Value is a list of {len(value)} items")
+#         print("  -> Showing first item:")
+
+#         # Drill into first item of the list
+#         first_item = value[0]
+#         print(f"    First item type: {type(first_item)}")
+
+#         # If it's a dictionary inside the list, print its keys
+#         if isinstance(first_item, dict):
+#             for k, v in first_item.items():
+#                 print(f"      {k} : {v}")
+#         else:
+#             print(f"    Value: {first_item}")
+
+#     elif isinstance(value, dict):
+#         print("  Nested dictionary:")
+#         for k, v in value.items():
+#             print(f"    {k} : {v}")
+#     else:
+#         print(f"  Unhandled type: {type(value)}")
+
+# # Optional: print the demo text for clarity
+# print(f"\n➡️ Sample demo text:\n{attrs.get('VoiceDemoText')} and Judson just worked his way down to me!")
+
+# ## make into a class where I can enter the voice indeex
+# import platform
+# from AppKit import NSSpeechSynthesizer
 
 
 
 
-# Get list of available voice identifiers
-voices = NSSpeechSynthesizer.availableVoices()
-print(type(voices)) # output: <objective-c class __NSArrayI at 0x2071acff0>
-print(voices[:3]) ## output: a list  of three voices( "com.apple.speech.synthesis.voice.Albert", "com.apple.voice.compact.it-IT.Alice",....)
-print(type(voices[0]))  #<class 'objc.pyobjc_unicode'>
-print(voices[0])        #com.apple.speech.synthesis.voice.Albert
 
 
-print(f"\n➡️ Level 0: voices (type: {type(voices)})")
-print(f"Total voices: {len(voices)}")
-print(f"voices[0]: {voices[0]}")  # This is a string
+# # Get list of available voice identifiers
+# voices = NSSpeechSynthesizer.availableVoices()
+# print(type(voices)) # output: <objective-c class __NSArrayI at 0x2071acff0>
+# print(voices[:3]) ## output: a list  of three voices( "com.apple.speech.synthesis.voice.Albert", "com.apple.voice.compact.it-IT.Alice",....)
+# print(type(voices[0]))  #<class 'objc.pyobjc_unicode'>
+# print(voices[0])        #com.apple.speech.synthesis.voice.Albert
 
-# Drill into the first voice
-voice_id = voices[0]
-print(f"\n➡️ Level 1: voice_id = voices[0]")
-print(f"voice_id: {voice_id} (type: {type(voice_id)})")
 
-# Get the attributes dictionary for that voice
-# attrs = NSSpeechSynthesizer.attributesForVoice_(voice_id)
-attrs = NSSpeechSynthesizer.attributesForVoice_(voices[0])
-# print(f"\n➡️ Level 2: attributes = NSSpeechSynthesizer.attributesForVoice_({voice_id})")
-print(f"\n➡️ Level 2: attributes = NSSpeechSynthesizer.attributesForVoice_({voices[0]})")
-print(f"type: {type(attrs)}")   #output:  type: <objective-c class __NSDictionaryM at 0x2071ad400>
+# print(f"\n➡️ Level 0: voices (type: {type(voices)})")
+# print(f"Total voices: {len(voices)}")
+# print(f"voices[0]: {voices[0]}")  # This is a string
 
-# Drill into the top-level keys in the attribute dictionary
-print("\n➡️ Level 3: keys and values in attributes (one by one)")
-for key, value in attrs.items():
-    print(f"Key: {key} | Type: {type(value)}")
-    if isinstance(value, (str, int)):
-        print(f'Key: {key}')
-        print(f"  Value: {value}")
-    elif isinstance(value, list):
-        print(f"  Value is a list of {len(value)} items")
-        print("  -> Showing first item:")
+# # Drill into the first voice
+# voice_id = voices[0]
+# print(f"\n➡️ Level 1: voice_id = voices[0]")
+# print(f"voice_id: {voice_id} (type: {type(voice_id)})")
 
-        # Drill into first item of the list
-        first_item = value[0]
-        print(f"    First item type: {type(first_item)}")
+# # Get the attributes dictionary for that voice
+# # attrs = NSSpeechSynthesizer.attributesForVoice_(voice_id)
+# attrs = NSSpeechSynthesizer.attributesForVoice_(voices[0])
+# # print(f"\n➡️ Level 2: attributes = NSSpeechSynthesizer.attributesForVoice_({voice_id})")
+# print(f"\n➡️ Level 2: attributes = NSSpeechSynthesizer.attributesForVoice_({voices[0]})")
+# print(f"type: {type(attrs)}")   #output:  type: <objective-c class __NSDictionaryM at 0x2071ad400>
 
-        # If it's a dictionary inside the list, print its keys
-        if isinstance(first_item, dict):
-            for k, v in first_item.items():
-                print(f"      {k} : {v}")
-        else:
-            print(f"    Value: {first_item}")
+# # Drill into the top-level keys in the attribute dictionary
+# print("\n➡️ Level 3: keys and values in attributes (one by one)")
+# for key, value in attrs.items():
+#     print(f"Key: {key} | Type: {type(value)}")
+#     if isinstance(value, (str, int)):
+#         print(f'Key: {key}')
+#         print(f"  Value: {value}")
+#     elif isinstance(value, list):
+#         print(f"  Value is a list of {len(value)} items")
+#         print("  -> Showing first item:")
 
-    elif isinstance(value, dict):
-        print("  Nested dictionary:")
-        for k, v in value.items():
-            print(f"    {k} : {v}")
-    else:
-        print(f"  Unhandled type: {type(value)}")
+#         # Drill into first item of the list
+#         first_item = value[0]
+#         print(f"    First item type: {type(first_item)}")
 
-# Optional: print the demo text for clarity
-print(f"\n➡️ Sample demo text:\n{attrs.get('VoiceDemoText')} and Judson just worked his way down to me!")
+#         # If it's a dictionary inside the list, print its keys
+#         if isinstance(first_item, dict):
+#             for k, v in first_item.items():
+#                 print(f"      {k} : {v}")
+#         else:
+#             print(f"    Value: {first_item}")
+
+#     elif isinstance(value, dict):
+#         print("  Nested dictionary:")
+#         for k, v in value.items():
+#             print(f"    {k} : {v}")
+#     else:
+#         print(f"  Unhandled type: {type(value)}")
+
+# # Optional: print the demo text for clarity
+# print(f"\n➡️ Sample demo text:\n{attrs.get('VoiceDemoText')} and Judson just worked his way down to me!")
