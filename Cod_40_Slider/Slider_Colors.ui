@@ -63,7 +63,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:rgb(52, 103, 255)rgb(101, 171, 255)</string>
+        <string notr="true">background:rgba(52, 103, 255, 1)rgb(101, 171, 255)</string>
        </property>
        <property name="text">
         <string>Blue</string>
