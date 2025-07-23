@@ -1,5 +1,7 @@
 '''
 
+I am your heart surgeon.      would you  like a new or used heart, the used ones are very affordable. .we have a special on slushies.  We have grape, lemon, strawberry and some purple junk
+
 
 '''
 ## !!this is the final working copy /Users/judsonbelmont/Documents/Shared_Folders/pyqt5_Codemy/Cod_38_Translator
