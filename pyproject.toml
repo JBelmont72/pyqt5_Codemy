@@ -7,6 +7,7 @@ requires-python = ">=3.9.6"
 dependencies = [
     "googletrans==4.0.0rc1",
     "gtts>=2.5.4",
+    "pip>=25.3",
     "playsound==1.2.2",
     "pyobjc>=11.1",
     "pyqt5>=5.15.11",

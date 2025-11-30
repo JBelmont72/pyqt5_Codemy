@@ -6,7 +6,7 @@ https://pythonpyqt.com/pyqt-qtextedit/
 mdi is multiple defined interface
 
 '''
-/Shared_Folders/pyqt5_Codemy/Cod_34_Calendar_Lcd_Menu/calendar.py
+#/Shared_Folders/pyqt5_Codemy/Cod_34_Calendar_Lcd_Menu/calendar.py
 from PyQt5.QtWidgets import QApplication,QMainWindow,QCalendarWidget,QLabel,QPushButton,QMenuBar,QLCDNumber,QTimeEdit
 import sys
 from PyQt5 import QtGui
