@@ -21,7 +21,7 @@ border:2 px solid rgb(255, 138, 74);
 border-radius: 20 px:
 color:green}
 '''
-/Users/judsonbelmont/Documents/Shared_Folders/pyqt5_Codemy/Cod_36_MdiArea/win.ui
+#/Users/judsonbelmont/Documents/Shared_Folders/pyqt5_Codemy/Cod_36_MdiArea/win.ui
 from PyQt5.QtWidgets import QApplication,QMainWindow,QWidget,QMenuBar,QMdiArea, QLabel,QPushButton,QMdiSubWindow,QTextEdit
 import sys
 from PyQt5 import uic

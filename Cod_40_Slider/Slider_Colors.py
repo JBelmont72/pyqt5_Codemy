@@ -3,7 +3,8 @@
 1. Codemy 40 tutorial on Sliders
 2. incorporate Paul McWHorter UDP control of LEDS
 3. Add second windows using the menubar action
-
+/Users/judsonbelmont/Documents/SharedFolders/Python/pyqt5_Codemy/Cod_40_Slider/Slider_Colors.ui
+/Users/judsonbelmont/Documents/SharedFolders/Python/pyqt5_Codemy/Cod_40_Slider/Slider_Colors.ui
 '''
 import sys
 from PyQt5.QtWidgets import QApplication,QMainWindow,QMenuBar,QPushButton,QSlider,QLabel
@@ -11,7 +12,7 @@ from PyQt5 import uic
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow,self).__init__()
-        uic.loadUi('/Users/judsonbelmont/Documents/Shared_Folders/pyqt5_Codemy/Cod_40_Slider/Slider_Colors.ui',self)
+        uic.loadUi('/Users/judsonbelmont/Documents/SharedFolders/Python/pyqt5_Codemy/Cod_40_Slider/Slider_Colors.ui',self)
         self.red=self.findChild(QPushButton,'pushButton_1')
         self.red.setStyleSheet('background-color: red;')
         self.green=self.findChild(QPushButton,'pushButton_2')
